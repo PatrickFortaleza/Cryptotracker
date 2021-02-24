@@ -39,16 +39,14 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
 
 
   return (
-    <View>
-      <CryptoListItem
-        symbol={symbol}
-        name={name}
-        id={id}
-        currentPrice={currentPrice}
-        change={change}
-        changeIsPositive={changeIsPositive}
-      />
-    </View>
+    <CryptoListItem
+      symbol={symbol}
+      name={name}
+      id={id}
+      currentPrice={currentPrice}
+      change={change}
+      changeIsPositive={changeIsPositive}
+    />
   )
 }
 
