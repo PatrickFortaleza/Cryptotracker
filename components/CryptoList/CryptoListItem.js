@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
     width: '25%',
     textAlign: 'right',
     color: '#fff',
-    borderRadius: 5,
   },
   spanPos: {
     backgroundColor: '#09a519',
@@ -65,7 +64,8 @@ const styles = StyleSheet.create({
     paddingTop: 3,
     paddingBottom: 3,
     textAlign: 'center',
-    color: '#fff'
+    color: '#fff',
+    borderRadius: 2,
   },
   spanNeg: {
     backgroundColor: '#cc3300',
@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
     paddingTop: 3,
     paddingBottom: 3,
     textAlign: 'center',
-    color: '#fff'
+    color: '#fff',
+    borderRadius: 2,
   },
   marketName: {
     width: '50%',

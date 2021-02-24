@@ -7,7 +7,7 @@ export default function CryptoList({ marketData }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.listHead}>
         <Text style={styles.heading}>Blockchain markets</Text>
-        <Text style={styles.subheading}>{ marketData.length } symbols</Text>
+        <Text style={styles.subheading}>$USD | &nbsp;{ marketData.length } symbols&nbsp;</Text>
       </View>
       <FlatList
         style={styles.flatList}
@@ -32,9 +32,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: `100%`,
-    marginTop: 50,
+    marginTop: 10,
     marginBottom: 50,
-    borderRadius: 5
+    borderRadius: 5,
+    zIndex: -1
   },
   listHead: {
     paddingTop: 20,
@@ -53,8 +54,8 @@ const styles = StyleSheet.create({
   },
   subheading: {
     color: '#ccc',
-    fontSize: 17,
-    marginTop: 7
+    fontSize: 12,
+    marginTop: 7,
   },
   flatList: {
     width: `100%`,

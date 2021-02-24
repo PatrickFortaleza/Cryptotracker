@@ -1,12 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, SafeAreaView  } from 'react-native'
 import CryptoList from '../components/controllers/CryptoListCtrl'
+import SearchBarCtrl from '../components/controllers/SearchBarCtrl'
 
 export default function Home() {
   return (
-    <View style={styles.container} >
+    <SafeAreaView style={styles.container}>
+      <SearchBarCtrl />
       <CryptoList />
-    </View>
+    </SafeAreaView >
   )
 }
 
