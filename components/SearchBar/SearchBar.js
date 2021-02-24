@@ -1,9 +1,10 @@
 import React from 'react'
 import { StyleSheet, TextInput, View, Button, TouchableOpacity, Text } from 'react-native'
 import { EvilIcons } from '@expo/vector-icons'
-import SearchList from './SearchList'
+import SearchListCtrl from '../controllers/SearchListCtrl'
 
-export default function SearchBar({setSearchQuery, query, resetQuery}) {
+
+export default function SearchBar({setSearchQuery, query, resetQuery, queryResult}) {
   return (
     <View style={styles.container}>
       <View style={styles.background}>
@@ -24,7 +25,7 @@ export default function SearchBar({setSearchQuery, query, resetQuery}) {
       </View>
       {
         query && query.length > 0 ?
-        <SearchList />
+        <SearchListCtrl queryResult={queryResult} />
         :
         null
       }

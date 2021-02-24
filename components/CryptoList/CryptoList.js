@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 import CryptoListItemCtrl from '../controllers/CryptoListItemCtrl'
+import SimplePreloader from '../SimplePreloader'
 
 export default function CryptoList({ marketData }) {
   return (
@@ -9,18 +10,23 @@ export default function CryptoList({ marketData }) {
         <Text style={styles.heading}>Blockchain markets</Text>
         <Text style={styles.subheading}>$USD | &nbsp;{ marketData.length } symbols&nbsp;</Text>
       </View>
-      <FlatList
-        style={styles.flatList}
-        keyExtractor={cryptoCurrency => cryptoCurrency.id}
-        data={marketData}
-        renderItem={({ item }) => {
-          return (
-            <TouchableOpacity >
-              <CryptoListItemCtrl cryptocurrency={item}/>
-            </TouchableOpacity>
-          )
-        }}
-      />
+      {
+        marketData.length < 100 ? 
+        <SimplePreloader />
+        :
+        <FlatList
+          style={styles.flatList}
+          keyExtractor={cryptoCurrency => cryptoCurrency.id}
+          data={marketData}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity >
+                <CryptoListItemCtrl cryptocurrency={item}/>
+              </TouchableOpacity>
+            )
+          }}
+        />
+      }
     </SafeAreaView>
   )
 }
@@ -30,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1F1F1F',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     width: `100%`,
     marginTop: 10,
     marginBottom: 50,
