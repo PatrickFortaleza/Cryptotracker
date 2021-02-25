@@ -2,7 +2,6 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 export default function DetailHeader({symbol, currentPrice, change, changeInt, changeIsPositive, date}) {
-  console.log(currentPrice)
   return (
     <View style={styles.container}>
       <Text style={styles.symbol}>{symbol}</Text>
@@ -16,7 +15,7 @@ export default function DetailHeader({symbol, currentPrice, change, changeInt, c
         }
         &nbsp;24h
       </Text>
-      <Text style={styles.date}>{date} PST</Text>
+      <Text style={styles.date}>{`${date}`} PST</Text>
     </View>
   )
 } 

@@ -15,6 +15,9 @@ export default function Index(props) {
       :
       <SimplePreloader />
     }
+    <View style={styles.banner}>
+      <Text style={styles.bannerText}>Last 7 days</Text>
+    </View>
   </View>
   )
 }
@@ -25,5 +28,14 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     borderBottomColor: '#282828',
     borderBottomWidth: 1,
+  },
+  banner: {
+    backgroundColor: '#202020'
+  },
+  bannerText: {
+    marginVertical: 7,
+    textAlign: 'center',
+    color: '#fff',
+    fontSize: 12
   }
 })
