@@ -5,7 +5,7 @@ export default function DetailHeader({symbol, currentPrice, change, changeInt, c
   return (
     <View style={styles.container}>
       <Text style={styles.symbol}>{symbol}</Text>
-      <Text style={styles.price}>{ currentPrice === '$NaN' ? 'Loading' : `${currentPrice}`} </Text>
+      <Text style={styles.price}>{ currentPrice === '$NaN' ? 'Loading' : `${currentPrice}`} <Text style={styles.subscript}>&nbsp;USD</Text></Text>
       <Text style={styles.change}>
         {
           !changeIsPositive ?
@@ -51,5 +51,10 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 12,
     color: '#ccc'
+  },
+  subscript: {
+    color: '#ccc',
+    fontSize: 12,
+    fontWeight: 'normal'
   }
 })
