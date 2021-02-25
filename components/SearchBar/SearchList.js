@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity, Dimensions } from 'react-native';
-import CryptoListItemCtrl from '../controllers/CryptoListItemCtrl'
+import CryptoListItemCtrl from '../controllers/CryptoList/CryptoListItemCtrl'
 
 export default function SearchList({ queryData, navigation }) {
   return (

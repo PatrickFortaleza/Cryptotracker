@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, SafeAreaView } from 'react-native'
-import SparklineCtrl from '../controllers/SparklineCtrl'
-import DetailHeaderCtrl from '../controllers/DetailHeaderCtrl'
-import DetailBodyCtrl from '../controllers/DetailBodyCtrl'
+import { StyleSheet, SafeAreaView } from 'react-native'
+import SparklineCtrl from '../controllers/Sparkline/SparklineCtrl'
+import DetailHeaderCtrl from '../controllers/CryptoDetail/DetailHeaderCtrl'
+import DetailBodyCtrl from '../controllers/CryptoDetail/DetailBodyCtrl'
 
 export default function CryptoDetail({coinData, sparkLine}) { 
   return (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import CryptoListItem from '../CryptoList/CryptoListItem'
+import CryptoListItem from '../../CryptoList/CryptoListItem'
 
 export default function CryptoListItemCtrl({ cryptocurrency }) {
   const [symbol, setSymbol] = useState('')
@@ -49,5 +48,3 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
     />
   )
 }
-
-const styles = StyleSheet.create({})

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import SearchBar from '../SearchBar/SearchBar'
-import { useCrypto } from '../../contexts/CryptoCurrencies'
+import SearchBar from '../../SearchBar/SearchBar'
+import { useCrypto } from '../../../contexts/CryptoCurrencies'
 
 export default function SearchBarCtrl({navigation}) {
   const CryptoContext = useCrypto()

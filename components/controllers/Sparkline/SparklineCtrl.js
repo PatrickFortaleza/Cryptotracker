@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
-import Sparkline from '../Sparkline'
+import Sparkline from '../../Sparkline'
 
 let ScreenWidth = Dimensions.get("window").width;
 let mounted = false;

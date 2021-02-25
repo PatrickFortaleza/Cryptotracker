@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import DetailHeader from '../CryptoDetail/DetailHeader'
+import DetailHeader from '../../CryptoDetail/DetailHeader'
 
 export default function DetailHeaderCtrl({coinData}) {
   const [currentPrice, setCurrentPrice] = useState('')
@@ -62,4 +61,3 @@ export default function DetailHeaderCtrl({coinData}) {
     />
   )
 }
-const styles = StyleSheet.create({})

@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, TextInput, View, Button, TouchableOpacity, Text } from 'react-native'
+import { StyleSheet, TextInput, View, TouchableOpacity, Text } from 'react-native'
 import Search from '../icons/Search'
-import SearchListCtrl from '../controllers/SearchListCtrl'
+import SearchListCtrl from '../controllers/SearchBar/SearchListCtrl'
 
 
 export default function SearchBar({setSearchQuery, query, resetQuery, queryResult, navigation}) {

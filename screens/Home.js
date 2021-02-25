@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, SafeAreaView  } from 'react-native'
-import CryptoListCtrl from '../components/controllers/CryptoListCtrl'
-import SearchBarCtrl from '../components/controllers/SearchBarCtrl'
+import { StyleSheet, SafeAreaView  } from 'react-native'
+import CryptoListCtrl from '../components/controllers/CryptoList/CryptoListCtrl'
+import SearchBarCtrl from '../components/controllers/SearchBar/SearchBarCtrl'
 
 export default function Home({navigation}) {
   console.log(navigation)

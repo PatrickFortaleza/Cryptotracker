@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
-import CryptoListItemCtrl from '../controllers/CryptoListItemCtrl'
+import CryptoListItemCtrl from '../controllers/CryptoList/CryptoListItemCtrl'
 import SimplePreloader from '../SimplePreloader'
 
 export default function CryptoList({ marketData, navigation }) {

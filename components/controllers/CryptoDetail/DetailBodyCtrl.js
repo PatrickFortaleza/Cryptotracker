@@ -1,5 +1,5 @@
 import React from 'react'
-import DetailBody from '../CryptoDetail/DetailBody'
+import DetailBody from '../../CryptoDetail/DetailBody'
 
 export default function DetailBodyCtrl({coinData}) {
 

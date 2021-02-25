@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
-import { queryCoin } from '../../network'
-import CryptoDetail from '../CryptoDetail/CryptoDetail'
+import { queryCoin } from '../../../network'
+import CryptoDetail from '../../CryptoDetail/CryptoDetail'
 
 export default function CryptoDetailCtrl({data}) {
   const [coinData, setCoinData] = useState({})
