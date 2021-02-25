@@ -7,7 +7,7 @@ export default function Home({navigation}) {
   console.log(navigation)
   return (
     <SafeAreaView style={styles.container}>
-      <SearchBarCtrl />
+      <SearchBarCtrl navigation={navigation} />
       <CryptoListCtrl navigation={navigation} />
     </SafeAreaView >
   )

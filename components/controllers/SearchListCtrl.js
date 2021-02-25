@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import SearchList from '../SearchBar/SearchList'
 
-export default function SearchListCtrl({queryResult}) {
+export default function SearchListCtrl({queryResult, navigation}) {
   return (
-    <SearchList queryData={queryResult}/>
+    <SearchList queryData={queryResult} navigation={navigation}/>
   )
 }
 

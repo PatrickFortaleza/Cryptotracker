@@ -4,7 +4,7 @@ import Search from '../icons/Search'
 import SearchListCtrl from '../controllers/SearchListCtrl'
 
 
-export default function SearchBar({setSearchQuery, query, resetQuery, queryResult}) {
+export default function SearchBar({setSearchQuery, query, resetQuery, queryResult, navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.background}>
@@ -25,7 +25,7 @@ export default function SearchBar({setSearchQuery, query, resetQuery, queryResul
       </View>
       {
         query && query.length > 0 ?
-        <SearchListCtrl queryResult={queryResult} />
+        <SearchListCtrl queryResult={queryResult} navigation={navigation}/>
         :
         null
       }

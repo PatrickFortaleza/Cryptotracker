@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../SearchBar/SearchBar'
 import { useCrypto } from '../../contexts/CryptoCurrencies'
 
-export default function SearchBarCtrl() {
+export default function SearchBarCtrl({navigation}) {
   const CryptoContext = useCrypto()
   const { marketData } = CryptoContext
   const [searchQuery, setSearchQuery] = useState('')
@@ -45,8 +44,6 @@ export default function SearchBarCtrl() {
   }
 
   return (
-    <SearchBar setSearchQuery={setSearchQuery} query={searchQuery} queryResult={queriedMarketData} resetQuery={resetQuery}/>
+    <SearchBar setSearchQuery={setSearchQuery} query={searchQuery} queryResult={queriedMarketData} resetQuery={resetQuery} navigation={navigation}/>
   )
 }
-
-const styles = StyleSheet.create({})

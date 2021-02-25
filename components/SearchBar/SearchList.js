@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 import CryptoListItemCtrl from '../controllers/CryptoListItemCtrl'
 
-export default function SearchList({ queryData }) {
+export default function SearchList({ queryData, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.listHead}>
@@ -15,7 +15,17 @@ export default function SearchList({ queryData }) {
         data={queryData}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity >
+            <TouchableOpacity onPress={
+              () => {
+                navigation.navigate('CryptoDetail', {
+                  data: {
+                    id: item.id,
+                    name: item.name,
+                    symbol: item.symbol
+                  }
+                })
+              }
+            }>
               <CryptoListItemCtrl cryptocurrency={item}/>
             </TouchableOpacity>
           )
