@@ -3,7 +3,7 @@ import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity } from
 import CryptoListItemCtrl from '../controllers/CryptoListItemCtrl'
 import SimplePreloader from '../SimplePreloader'
 
-export default function CryptoList({ marketData }) {
+export default function CryptoList({ marketData, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.listHead}>
@@ -20,7 +20,17 @@ export default function CryptoList({ marketData }) {
           data={marketData}
           renderItem={({ item }) => {
             return (
-              <TouchableOpacity >
+              <TouchableOpacity 
+                onPress={() => {
+                  navigation.navigate('CryptoDetail', {
+                    data: {
+                      id: item.id,
+                      name: item.name,
+                      symbol: item.symbol
+                    }
+                  })
+                }}
+              >
                 <CryptoListItemCtrl cryptocurrency={item}/>
               </TouchableOpacity>
             )

@@ -13,3 +13,16 @@ export const queryMarkets = async () => {
     }
   }
 }
+
+export const queryCoin = async ({id}) => {
+  let data
+  try {
+    const result = await axios.get(`${BASE_URL}/coins/${id}`)
+    return result
+  } catch (err) {
+    return data = {
+      error: 'could not retrieve market data'
+    }
+  }
+
+}

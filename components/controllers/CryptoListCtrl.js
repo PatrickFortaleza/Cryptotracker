@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { queryMarkets } from '../../network'
+import React from 'react'
 import CryptoList from '../CryptoList/CryptoList'
 import { useCrypto } from '../../contexts/CryptoCurrencies'
 
-export default function CryptoListCtrl() {
+export default function CryptoListCtrl({navigation}) {
   const CryptoContext = useCrypto()
   const { marketData } = CryptoContext
 
   return (
-    <CryptoList marketData={marketData} />
+    <CryptoList navigation={navigation} marketData={marketData} />
   )
 }
