@@ -25,7 +25,7 @@ export default function SearchBarCtrl() {
 
   const filterMarketData = (array) => {
     let filteredData = array.filter((d) => {
-      return d.symbol.startsWith(`${searchQuery.toLowerCase()}`);
+      if(d.symbol.startsWith(`${searchQuery.toLowerCase()}`) || d.name.toLowerCase().startsWith(`${searchQuery.toLowerCase()}`)) return d
     })
     return filteredData
   }
