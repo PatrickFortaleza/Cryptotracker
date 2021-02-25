@@ -17,7 +17,7 @@ export const queryMarkets = async () => {
 export const queryCoin = async ({id}) => {
   let data
   try {
-    const result = await axios.get(`${BASE_URL}/coins/${id}`)
+    const result = await axios.get(`${BASE_URL}/coins/${id}?sparkline=true`)
     return result
   } catch (err) {
     return data = {

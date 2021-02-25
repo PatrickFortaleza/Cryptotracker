@@ -36,7 +36,7 @@ export default function App() {
           <Stack.Screen 
             name="Home"
             options={{ 
-              title: 'Blockchain Index', 
+              title: 'Index', 
               ...navOptions
             }} 
             component={Home}

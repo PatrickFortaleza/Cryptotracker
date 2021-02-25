@@ -6,7 +6,7 @@ export default function CryptoDetail({navigation, route}) {
   const { data } = route.params
 
   useEffect(() => {
-    navigation.setOptions({ title: `${data.symbol}` })
+    navigation.setOptions({ title: `${data.name}` })
   }, [])
 
   return (

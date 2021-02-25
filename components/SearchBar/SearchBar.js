@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, TextInput, View, Button, TouchableOpacity, Text } from 'react-native'
-import { EvilIcons } from '@expo/vector-icons'
+import Search from '../icons/Search'
 import SearchListCtrl from '../controllers/SearchListCtrl'
 
 
@@ -8,7 +8,7 @@ export default function SearchBar({setSearchQuery, query, resetQuery, queryResul
   return (
     <View style={styles.container}>
       <View style={styles.background}>
-        <EvilIcons style={styles.icon} name="search" />
+        <Search style={styles.icon} name="search" />
         <TextInput
           onChangeText={newTerm => setSearchQuery(newTerm)}
           value={query} 

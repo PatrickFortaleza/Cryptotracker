@@ -29,6 +29,7 @@ export default function index() {
 const styles = StyleSheet.create({
   preloader: {
     marginVertical: 20,
-    color: 'white'
+    color: 'white',
+    textAlign: 'center'
   }
 })
