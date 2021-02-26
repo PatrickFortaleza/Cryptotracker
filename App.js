@@ -9,7 +9,9 @@ import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer styles={
+      styles.container
+    }>
       <CryptoProvider>
         <Navigation />
       </CryptoProvider>

@@ -1,13 +1,22 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function CryptoListItem({symbol, name, id, currentPrice, change, changeIsPositive}) {
+export default function CryptoListItem({symbol, name, currentPrice, change, changeIsPositive, priceChange}) {
 
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <Text style={styles.symbol}>{symbol}</Text>
-        <Text style={styles.price}>{currentPrice}</Text>
+        <View style={{flex: 1, flexDirection: 'column', width: '35%'}}>
+          <Text style={styles.price}>{currentPrice}</Text>
+          {
+            changeIsPositive ?
+              <Text style={styles.pChangePos}>+{priceChange}</Text>
+            :
+              <Text style={styles.pChangeNeg}>{priceChange}</Text>
+          }
+
+        </View>
         <View style={styles.change}>
           {
             changeIsPositive ?   
@@ -19,7 +28,7 @@ export default function CryptoListItem({symbol, name, id, currentPrice, change, 
       </View>
       <View style={styles.row}>
         <Text style={styles.marketName}>{name}</Text>
-        <Text style={styles.disclaimer}>Last 24 hours</Text>
+        <Text style={styles.disclaimer}>24h %change</Text>
       </View>
     </View>
   )
@@ -47,11 +56,25 @@ const styles = StyleSheet.create({
     lineHeight: 23,
   },
   price: {
-    width: '35%',
+    width: '100%',
     textAlign: 'right',
     color: '#fff',
     lineHeight: 23,
     paddingRight: 15
+  },
+  pChangeNeg: {
+    color: '#cc3300',
+    fontSize: 10,
+    textAlign: 'right',
+    paddingRight: 15,
+    marginTop: 3,
+  },
+  pChangePos: {
+    color: '#09a519',
+    fontSize: 10,
+    textAlign: 'right',
+    paddingRight: 15,
+    marginTop: 3,
   },
   change: {
     width: '25%',
@@ -87,6 +110,7 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     color: 'grey',
     lineHeight: 17,
-    fontSize: 10
+    fontSize: 10,
+    marginTop: -20
   }
 })

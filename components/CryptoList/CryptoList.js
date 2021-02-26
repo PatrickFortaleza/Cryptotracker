@@ -3,11 +3,12 @@ import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity } from
 import CryptoListItemCtrl from '../controllers/CryptoList/CryptoListItemCtrl'
 import SimplePreloader from '../SimplePreloader'
 
-export default function CryptoList({ marketData, navigation }) {
+export default function CryptoList({ marketData, navigation, date }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.listHead}>
         <Text style={styles.heading}>Blockchain markets</Text>
+        <Text style={styles.date}>{date}</Text>
         <Text style={styles.subheading}>$USD | &nbsp;{ marketData.length } symbols&nbsp;</Text>
       </View>
       {
@@ -77,5 +78,9 @@ const styles = StyleSheet.create({
     width: `100%`,
     paddingRight: 20,
     paddingLeft: 20
-  }
+  },
+  date: {
+    fontSize: 12,
+    color: '#ccc'
+  },
 });

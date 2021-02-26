@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   symbol: {
     color: '#ffffff',
     fontWeight: 'bold',
-    fontSize: 17,
+    fontSize: 25,
     textTransform: 'uppercase'
   },
   price: {

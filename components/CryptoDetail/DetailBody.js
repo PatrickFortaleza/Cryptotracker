@@ -68,8 +68,15 @@ export default function DetailBody({categories, description, genesis, hash, mark
             :
               null
           }
-          <Text style={styles.header}>Currency Profile</Text>
-          <Text style={styles.text}>{description}</Text>
+          {
+            description ?
+            <>
+              <Text style={styles.header}>Currency Profile</Text>
+              <Text style={styles.text}>{description}</Text>
+            </>
+            :
+              null
+          }
         </View>
       </ScrollView>
   )

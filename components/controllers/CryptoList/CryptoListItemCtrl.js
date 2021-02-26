@@ -6,8 +6,8 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
   const [name, setName] = useState('')
   const [id, setId] = useState('')
   const [currentPrice, setCurrentPrice] = useState('')
-  const [change, setChange] = useState('')
   const [changeIsPositive, setChangeIsPositive] = useState(false)
+  const [priceChange, setPriceChange] = useState('')
 
   const formatPrice = ({int}) => {
     var parts = int.toString().split(".");
@@ -23,7 +23,7 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
   }
 
   const evaluateNegative = () => {
-    const percentChange = evaluate24hChange({ change: cryptocurrency.price_change_24h, current: +cryptocurrency.current_price })
+    const percentChange = evaluate24hChange({ change: +cryptocurrency.price_change_24h, current: +cryptocurrency.current_price })
     if( percentChange >= 0 ) setChangeIsPositive(true)
   }
 
@@ -32,7 +32,7 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
     setName(cryptocurrency.name)
     setId(cryptocurrency.id)
     setCurrentPrice(`$${formatPrice({ int: +cryptocurrency.current_price.toFixed(2)})}`)
-    setChange(`${evaluate24hChange({ change: cryptocurrency.price_change_24h, current: +cryptocurrency.current_price })}%`)
+    setPriceChange(`${formatPrice({ int: +cryptocurrency.price_change_24h.toFixed(2)})}`)
     evaluateNegative()  
   }, [ , cryptocurrency])
 
@@ -43,7 +43,8 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
       name={name}
       id={id}
       currentPrice={currentPrice}
-      change={change}
+      priceChange={priceChange}
+      change={`${cryptocurrency.price_change_percentage_24h.toFixed(2)}%`}
       changeIsPositive={changeIsPositive}
     />
   )
