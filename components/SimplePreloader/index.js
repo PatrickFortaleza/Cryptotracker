@@ -11,6 +11,8 @@ export default function index() {
 
   useEffect(() => {
     mounted = true
+
+    return () => { mounted = false }
   }, [])
 
   const addDots = () => {
