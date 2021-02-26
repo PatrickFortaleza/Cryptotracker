@@ -3,7 +3,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home'
 import CryptoDetail from '../screens/CryptoDetail'
-import MostActive from '../screens/MostActive'
+import MarketMovers from '../screens/MarketMovers'
 import { GraphActive, GraphDefault } from '../components/icons/Graph'
 import { StarActive, StarDefault } from '../components/icons/Star'
 
@@ -50,10 +50,10 @@ function ScreenTwoNavigator(){
   return (
     <ScreenOneStack.Navigator>
       <ScreenOneStack.Screen 
-        name="Most Active"
-        component={MostActive}
+        name="Market Movers"
+        component={MarketMovers}
         options={{
-          headerTitle: 'Most Active',
+          headerTitle: 'Market Movers',
           ...navOptions
           }} />
     </ScreenOneStack.Navigator>
@@ -81,7 +81,7 @@ export default function index() {
         }}
       />
       <BottomTab.Screen 
-        name="Most Active"
+        name="Market Movers"
         component={ScreenTwoNavigator}
         options={{
           ...navOptions,
