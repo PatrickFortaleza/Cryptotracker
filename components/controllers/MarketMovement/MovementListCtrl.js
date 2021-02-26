@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import MovementList from '../../MarketMovement/MovementList'
 import { useCrypto } from '../../../contexts/CryptoCurrencies'
 
-export default function MovementListCtrl() {
+export default function MovementListCtrl({navigation}) {
   const [topGainers, setTopGainers] = useState([])
   const [topLosers, setTopLosers] = useState([])
   const CryptoContext = useCrypto()
@@ -27,6 +26,6 @@ export default function MovementListCtrl() {
   }
 
   return (
-    <MovementList gainers={topGainers} losers={topLosers} />
+    <MovementList navigation={navigation} gainers={topGainers} losers={topLosers} />
   )
 }

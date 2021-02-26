@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, FlatList, SafeAreaView, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import CryptoListItemCtrl from '../controllers/CryptoList/CryptoListItemCtrl'
 
-export default function MovementList({ marketData, navigation, gainers, losers }) {
+export default function MovementList({ navigation, gainers, losers }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.listHead}>

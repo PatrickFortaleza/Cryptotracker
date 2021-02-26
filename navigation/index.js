@@ -9,7 +9,7 @@ import { StarActive, StarDefault } from '../components/icons/Star'
 
 
 const BottomTab = createMaterialBottomTabNavigator();
-const ScreenOneStack = createStackNavigator();
+const ScreenStack = createStackNavigator();
 
 const navOptions = {
   headerStyle: {
@@ -27,36 +27,42 @@ const navOptions = {
 
 function ScreenOneNavigator() {
     return (
-      <ScreenOneStack.Navigator>
-        <ScreenOneStack.Screen 
+      <ScreenStack.Navigator>
+        <ScreenStack.Screen 
           name="Index"
           component={Home}
           options={{
             headerTitle: 'Index',
             ...navOptions
             }} />
-        <ScreenOneStack.Screen 
+        <ScreenStack.Screen 
             name="CryptoDetail"
             component={CryptoDetail}
             options={{
               ...navOptions
             }}
           />
-      </ScreenOneStack.Navigator>
+      </ScreenStack.Navigator>
     );
 }
 
 function ScreenTwoNavigator(){
   return (
-    <ScreenOneStack.Navigator>
-      <ScreenOneStack.Screen 
+    <ScreenStack.Navigator>
+      <ScreenStack.Screen 
         name="Market Movers"
         component={MarketMovers}
         options={{
           headerTitle: 'Market Movers',
           ...navOptions
           }} />
-    </ScreenOneStack.Navigator>
+      <ScreenStack.Screen 
+        name="CryptoDetail"
+        component={CryptoDetail}
+        options={{
+          ...navOptions
+        }} />
+    </ScreenStack.Navigator>
   )
 }
 
