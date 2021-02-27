@@ -31,10 +31,13 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
     setSymbol(cryptocurrency.symbol)
     setName(cryptocurrency.name)
     setId(cryptocurrency.id)
-    setCurrentPrice(`$${formatPrice({ int: +cryptocurrency.current_price.toFixed(2)})}`)
-    setPriceChange(`${formatPrice({ int: +cryptocurrency.price_change_24h.toFixed(2)})}`)
+    setCurrentPrice(`$${formatPrice({ int: +cryptocurrency.current_price.toFixed(5)})}`)
+    setPriceChange(`${formatPrice({ int: +cryptocurrency?.price_change_24h?.toFixed(5)})}`)
     evaluateNegative()  
-  }, [ , cryptocurrency])
+  }, [cryptocurrency])
+
+  let change = ''
+  if(cryptocurrency && cryptocurrency.price_change_percentage_24h) change = `${+cryptocurrency.price_change_percentage_24h?.toFixed(2)}%`
 
 
   return (
@@ -44,7 +47,7 @@ export default function CryptoListItemCtrl({ cryptocurrency }) {
       id={id}
       currentPrice={currentPrice}
       priceChange={priceChange}
-      change={`${cryptocurrency.price_change_percentage_24h.toFixed(2)}%`}
+      change={change}
       changeIsPositive={changeIsPositive}
     />
   )

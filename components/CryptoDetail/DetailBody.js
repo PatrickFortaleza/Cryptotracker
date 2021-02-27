@@ -7,75 +7,61 @@ export default function DetailBody({categories, description, genesis, hash, mark
         <View style={styles.flexed}>
           <View style={styles.info}>
             {
-              genesis !== null ?
+              genesis !== null && 
               <>
                 <Text style={styles.subheader}>Genesis Date:</Text>
-                <Text style={styles.text}>{genesis}</Text>
+                <Text style={styles.text}>{`${genesis}`}</Text>
               </>
-              :
-                null
             }
             {
-              high !== null && low !== null ?
+              high !== null &&
               <>
                 <Text style={styles.subheader}>24h Hi / Lo:</Text>
-                <Text style={styles.text}>{high} / {low} </Text>
+                <Text style={styles.text}>{`${high}`} / {`${low}`} </Text>
               </>
-              :
-                null
             }
             {
-              marketcap !== null ?
+              marketcap !== null &&
               <>
                 <Text style={styles.subheader}>Market Cap:</Text>
-                <Text style={styles.text}>{marketcap}</Text>
+                <Text style={styles.text}>{`${marketcap}`}</Text>
               </>
-              :
-                null
             }
             {
-              hash !== null ?
+              hash !== null &&
               <>
                 <Text style={styles.subheader}>Hashing Algorithm:</Text>
-                <Text style={styles.text}>{hash}</Text>
+                <Text style={styles.text}>{`${hash}`}</Text>
               </>
-              :
-                null
             }
           </View>
           <View style={styles.logo}>
             {
-              imgURL ? 
+              imgURL !== null && 
                 <Image style={styles.image} source={{ uri: imgURL }} />
-              :
-                null
             }
           </View>
         </View>
         <View>
           {
-            categories?.length > 0 ?
+            categories !== null && categories?.length < 0 &&
             <>
               <Text style={styles.subheader}>Categories:</Text>
               <View style={styles.categoryContainer}>
                 { categories?.map((c, index) =>
                   (
-                    <Text style={styles.category} key={index}>{c}</Text>
+                    <Text style={styles.category} key={index}>{`${c}`}</Text>
                   )
                 )}
               </View>
             </>
-            :
-              null
           }
           {
-            description ?
+            description &&
             <>
               <Text style={styles.header}>Currency Profile</Text>
-              <Text style={styles.text}>{description}</Text>
+              <Text style={styles.text}>{`${description}`}</Text>
             </>
-            :
-              null
           }
         </View>
       </ScrollView>

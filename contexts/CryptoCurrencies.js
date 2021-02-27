@@ -16,7 +16,8 @@ export function CryptoProvider({children}){
   const queryMarketData = async () => {
     const results = await queryMarkets()
     if(results.length > 1) return null
-    setMarketData(results.data)
+    const sorted = results.data.sort((a, b) => b.market_cap - a.market_cap)
+    setMarketData(sorted)
   }
 
   const value = {

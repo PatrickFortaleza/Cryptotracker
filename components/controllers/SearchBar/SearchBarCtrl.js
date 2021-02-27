@@ -36,7 +36,8 @@ export default function SearchBarCtrl({navigation}) {
         symbol: r.symbol,
         name: r.name,
         current_price: r.current_price,
-        price_change_24h: r.price_change_24h 
+        price_change_24h: r.price_change_24h, 
+        price_change_percentage_24h: r.price_change_percentage_24h
       }
       return object
     })

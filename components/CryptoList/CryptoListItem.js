@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
     fontSize: 10,
     textAlign: 'right',
     paddingRight: 15,
-    marginTop: 3,
+    marginTop: -3,
   },
   pChangePos: {
     color: '#09a519',
     fontSize: 10,
     textAlign: 'right',
     paddingRight: 15,
-    marginTop: 3,
+    marginTop: -3,
   },
   change: {
     width: '25%',
@@ -111,6 +111,6 @@ const styles = StyleSheet.create({
     color: 'grey',
     lineHeight: 17,
     fontSize: 10,
-    marginTop: -20
+    marginTop: -15
   }
 })

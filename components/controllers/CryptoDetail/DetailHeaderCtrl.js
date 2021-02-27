@@ -44,8 +44,8 @@ export default function DetailHeaderCtrl({coinData}) {
   };
 
   useEffect(() => {
-    setCurrentPrice(`$${formatPrice({ int: +coinData.market_data?.current_price.usd.toFixed(2)})}`)
-    setChange(`${evaluate24hChange({ change: +coinData.market_data?.price_change_24h_in_currency.usd, current: +coinData.market_data?.current_price.usd.toFixed(2) })}%`)
+    setCurrentPrice(`$${formatPrice({ int: +coinData.market_data?.current_price.usd.toFixed(5)})}`)
+    setChange(`${evaluate24hChange({ change: +coinData.market_data?.price_change_24h_in_currency.usd, current: +coinData.market_data?.current_price.usd.toFixed(5) })}%`)
     evaluateNegative()
     setDate(parseDate(date))  
   }, [coinData])
@@ -55,7 +55,7 @@ export default function DetailHeaderCtrl({coinData}) {
       symbol={coinData.symbol} 
       currentPrice={currentPrice} 
       change={change}
-      changeInt={+coinData.market_data?.price_change_24h_in_currency.usd.toFixed(2)}
+      changeInt={+coinData.market_data?.price_change_24h_in_currency.usd.toFixed(5)}
       changeIsPositive={changeIsPositive}
       date={date}
     />
