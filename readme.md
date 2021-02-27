@@ -24,6 +24,8 @@ Each cryptocurrency detail page features an SVG-based sparkline graph that repre
 **The Challenge: Sparkline** <br/>
 Finding a solution to display a sparkline was a unique challenge. After discovering that sparkline data was available in the api as an array of numbers ie. `[506789.82, 47189.21, 53987.56 ...]`, I came to the conclusion that the best way to dynamically render a sparkline for each cryptocurrency was to use an SVG path.
 
+---
+
 **The Solution: Sparkline** <br/>
 After closely inspecting the markup of a regular SVG, I discovered the syntax for a `<path>` element contained X and Y coordinates.
 
@@ -35,6 +37,8 @@ Example:
 <path d="M {x} {y} L {x} {y} L...
 ```
 From the example above, the first point in the path would have an X Coordinate of 4, and a Y coordinate of 28.26. This means that if I could somehow transform the array of numbers from the sparkline data into coordinates, I could make an accurate SVG path.
+
+---
 
 **The Implementation: Plotting the X Axis Coordinates** <br/>
 Plotting the X Axis coordinates was the easy part. The challenge here was averaging-out the points from the sparkline array length-wise to the screen. My solution to plot the X axis included querying the screen width of the device, and dividing the width by the data points I had. In this case it was 168.
@@ -88,6 +92,8 @@ src/components/controllers/Sparkline/SparklineCtrl.js
 ```
 Result:
 `[9.186710133928345, 8.764548421290856, 11.521401450…]`
+
+---
 
 **The Implementation: Finishing Up** <br/>
 With the X and Y coordinates processed, all I needed to do was to merge the arrays and format the coordinates into a string that the `<path>` element could accept.
