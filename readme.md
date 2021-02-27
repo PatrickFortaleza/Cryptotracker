@@ -4,9 +4,9 @@ A cross platform cryptocurrency tracker application that cryptocurrency investor
 Built with React Native, using the [CoinGecko API](https://www.coingecko.com/en/api).
 
 <div style="display: flex">
-  <img width="200" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-1.gif"/> 
-  <img width="200" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-2.gif"/>
-  <img width="200" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-3.gif"/>
+  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-3.gif"/> 
+  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-2.gif"/>
+  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-1.gif"/>
 </div>
 
 
@@ -18,7 +18,7 @@ Built with React Native, using the [CoinGecko API](https://www.coingecko.com/en/
 ### Sparkline - Solution Case Study
 Each cryptocurrency detail page features an SVG-based sparkline graph that represents the hourly price movement of a cryptocurrency over 168 hours (7 days).
 
-<img src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-sparkline.png" width="50%" />
+<img src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-sparkline.png" width="300" />
 &nbsp;
 
 **The Challenge: Sparkline**
