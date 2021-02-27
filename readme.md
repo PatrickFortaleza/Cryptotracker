@@ -4,9 +4,9 @@ A cross platform cryptocurrency tracker application that cryptocurrency investor
 Built with React Native, using the [CoinGecko API](https://www.coingecko.com/en/api).
 
 <div style="display: flex">
-  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-3.gif"/> 
+  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-1.gif"/> 
+  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-3.gif"/>
   <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-2.gif"/>
-  <img width="250" src="https://pfteza-etc.s3-us-west-2.amazonaws.com/cryptotracker-1.gif"/>
 </div>
 
 
