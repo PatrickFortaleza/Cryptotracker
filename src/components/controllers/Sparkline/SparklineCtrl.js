@@ -71,7 +71,7 @@ export default function SparklineCtrl({sparkLine}) {
   }
 
   const formatFillCoordinates = (string) => {
-    if(!string || string.legnth < 1) return null
+    if(!string || string.length < 1) return null
     setSvgPathFill(`${string} V 100 L 0 100 Z`)
   }
 
