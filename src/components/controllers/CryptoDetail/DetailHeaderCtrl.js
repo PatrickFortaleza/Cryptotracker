@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import DetailHeader from '../../CryptoDetail/DetailHeader'
 
+let mounted = false
 export default function DetailHeaderCtrl({coinData}) {
   const [currentPrice, setCurrentPrice] = useState('')
   const [change, setChange] = useState('')
@@ -44,10 +45,18 @@ export default function DetailHeaderCtrl({coinData}) {
   };
 
   useEffect(() => {
-    setCurrentPrice(`$${formatPrice({ int: +coinData.market_data?.current_price.usd.toFixed(5)})}`)
-    setChange(`${evaluate24hChange({ change: +coinData.market_data?.price_change_24h_in_currency.usd, current: +coinData.market_data?.current_price.usd.toFixed(5) })}%`)
-    evaluateNegative()
-    setDate(parseDate(date))  
+    mounted = true
+
+    return () => { mounted = false }
+  }, [])
+
+  useEffect(() => {
+    if(mounted) {
+      setCurrentPrice(`$${formatPrice({ int: +coinData.market_data?.current_price.usd.toFixed(5)})}`)
+      setChange(`${evaluate24hChange({ change: +coinData.market_data?.price_change_24h_in_currency.usd, current: +coinData.market_data?.current_price.usd.toFixed(5) })}%`)
+      evaluateNegative()
+      setDate(parseDate(date))
+    }  
   }, [coinData])
 
   return (

@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     paddingRight: 15,
     marginTop: -3,
-  },
+  }, 
   change: {
     width: '25%',
     textAlign: 'right',

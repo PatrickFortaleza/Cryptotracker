@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { CryptoProvider } from './contexts/CryptoCurrencies'
-import Navigation from './navigation'
+import { CryptoProvider } from './src/contexts/CryptoCurrencies'
+import Navigation from './src/navigation'
 
 // React Native
 // ========================
